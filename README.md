@@ -5,6 +5,7 @@
 resource "aws_instance" "demo" {
   ami           = "ami-076e3a557efe1aa9c"
   instance_type = "t2.micro"
+  #to attach user data script to the instace we need file function , file("${path.module}/app1-userdata.sh")  this is the file function 
   user_data     = file("${path.module}/app1-userdata.sh") 
   key_name = "newlinux"
   tags = {
